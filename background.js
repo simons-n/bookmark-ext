@@ -32,8 +32,6 @@ appDb.on('child_changed', snapshot => {
 
 // updateState is a function that writes the changes to Chrome Storage
 function updateState(applicationState) {
-  console.log("about to set");
-  console.log("applicationState = " + JSON.stringify(applicationState));
   chrome.storage.local.set({ state: JSON.stringify(applicationState) });
 }
 
