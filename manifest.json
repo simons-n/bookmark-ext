@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Bk Mk. 2",
+  "description": "This extension provides more power and personalization
+  for better bookmarks",
+  "version": "0.2",
+  "author": "Nick Simons",
+
+  "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
+
+  "background": {
+    "page": "background.html"
+  },
+
+  "icons" : {
+    "16": "bkmk16.png",
+    "48": "bkmk48.png",
+    "128": "bkmk128.png"
+  },
+
+  "browser_action" : {
+    "default_icon": {
+      "16": "bkmk16.png",
+      "48": "bkmk48.png",
+      "128": "bkmk128.png"
+    },
+    "default_title": "Mark this page",
+    "default_popup": "popup.html"
+  },
+
+  "permissions" : ["bookmarks", "storage", "identity", "identity.email"]
+}
