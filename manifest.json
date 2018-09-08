@@ -3,7 +3,7 @@
   "name": "Bk Mk. 2",
   "description": "This extension provides more power and personalization
   for better bookmarks",
-  "version": "0.2",
+  "version": "0.3",
   "author": "Nick Simons",
 
   "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
@@ -28,5 +28,5 @@
     "default_popup": "popup.html"
   },
 
-  "permissions" : ["bookmarks", "storage", "identity", "identity.email"]
+  "permissions" : ["bookmarks", "storage", "identity", "identity.email", "activeTab"]
 }

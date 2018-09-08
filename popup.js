@@ -1,25 +1,45 @@
 //Nick Simons, 8/28/18
 
 document.addEventListener('DOMContentLoaded', function() {
-  //Sets userId to current user
-  var userInfo = chrome.identity.getProfileUserInfo(function(result) {
-    var userId = result.id;
-    chrome.storage.local.get(['userId'], function(prevStoredObj) {
-      console.log('previously stored userId is ' + prevStoredObj.userId);
+
+  //Sets userId to current user as soon as loaded
+  var user = getUser();
+
+  function getUser() {
+    chrome.identity.getProfileUserInfo(function(result) {
+      var userId = result.id;
+      chrome.storage.local.get(['userId'], function(prevStoredObj) {
+        console.log('previously stored userId is ' + prevStoredObj.userId);
+      });
+      console.log('current user id is ' + userId);
+      chrome.storage.local.set({['userId']: userId}, function() {
+        //get and print the data just stored to ensure that it was stored correctly
+        chrome.storage.local.get(['userId'], function(storedObj) {
+          console.log('newly stored userId is ' + storedObj.userId);
+        });
+      });
+      console.log('user in getUser is ' + userId);
+      return userId;
     });
-    console.log('current user id is ' + userId);
-    chrome.storage.local.set({['userId']: userId}, function() {
-      //get the data just stored to ensure that it was stored correctly
-      chrome.storage.local.get(['userId'], function(storedObj) {
-        console.log('newly stored userId is ' + storedObj.userId);
+  }
+
+  function resetIdList() {
+    chrome.storage.local.set({['idList']: 0}, function() {
+      chrome.storage.local.get(['idList'], function(justStored) {
+        console.log('idList is ' + JSON.stringify(justStored));
       });
     });
-  });
+  }
 
-  var openPage = document.getElementById("open-page")
+  var openPage = document.getElementById("open-page");
+  //Open new page to view and edit bookmarks
   openPage.onclick = function() {
     console.log("View Bookmarks button clicked");
+    chrome.tabs.create({ url: "viewbookmarks.html" }, function() {console.log('tab create');});
+    //resetIdList();
   }
+
+  //Add newly created bookmarks to database/this extension
   var sync = document.getElementById("sync");
   sync.onclick = function() {
     console.log("Sync button clicked");
@@ -30,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var cats = JSON.parse(result.state).values[0].id;
       console.log('Users is ' + cats);
     });*/
+
   };
 });
 
@@ -53,6 +74,7 @@ function getNodeInfo(node) {
     var nodeDateAdded = node.dateAdded;
     var nodeReminders = [];
 
+    //Sends message to background containing info to be added to database
     chrome.runtime.sendMessage({type: "updateValue", opts: {id: nodeId, url: nodeUrl, title: nodeTitle, dateAdded: nodeDateAdded, reminders: nodeReminders}});
   }
 }
