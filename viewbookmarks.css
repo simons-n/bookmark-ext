@@ -1,4 +1,5 @@
 body, section {
+  background-color: lightblue;
   width: 800px,
   height: 900px,
   overflow-x: hidden;
@@ -6,3 +7,16 @@ body, section {
 
 section { padding: 5px;}
 .navbar { margin-bottom: 2px; }
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
+p {
+  padding-bottom: 300px;
+}
