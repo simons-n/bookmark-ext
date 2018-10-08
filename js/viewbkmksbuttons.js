@@ -99,4 +99,14 @@ function remove(ev) {
 function edit(ev) {
   var id = ev.currentTarget.id;
   var strippedId = id.split('_').pop();
+  $(document).ready(function() {
+    $( "#dialog" ).dialog({
+    buttons: [{
+        text: "OK",
+        click: function() {
+          $( this ).dialog( "close" );
+        }
+      }]
+    });
+  });
 }

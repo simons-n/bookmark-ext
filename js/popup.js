@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
   //Open new page to view and edit bookmarks
   openPage.onclick = function() {
     console.log("View Bookmarks button clicked");
-    chrome.tabs.create({ url: "viewbookmarks.html" }, function() {console.log('tab create');});
+    chrome.tabs.create({ url: "../html/viewbookmarks.html" }, function() {console.log('tab create');});
     //resetIdList();
   }
 
