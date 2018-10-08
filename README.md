@@ -1,5 +1,6 @@
 # Book Mk. 2
 ![](img/bkmk128.png)
+
 Book Mk. 2 is a simple extention meant to provide an alternative way to view and interact with your Chrome bookmarks (while also providing me with some web development practice!)  Look out for upcoming features, including bookmark reminders.
 
 ### Tech
@@ -19,21 +20,29 @@ $ git clone https://github.com/simons-n/bookmark-ext.git
 ```
 2. Visit chrome://extensions
 3. Ensure that Developer Mode is enabled using the button at the top right of the page.
+
 ![](figures/devmode.png)
+
 4. Click the *Load unpacked* button at the top left of the page.
+
 ![](figures/loadunpacked.png)
+
 5. Select the directory to which you cloned this repository, and click *Open*.  
 6. Use Book Mk. 2!
 
 ### Usage
 ![](figures/icon.png)
+
 Click on the Book Mk. 2 extension icon, circled in red above.
+
 ![](figures/popup.png)
+
 ***The first time you use the extension*** and ***whenever you create a new bookmark***, you should click **Sync with Bookmarks** to synchronize your existing Chrome bookmarks with Book Mk. 2.
 
 Click **View Bookmarks** to open a new tab that lists all of your bookmarks.
 
 ![](figures/bkmklist.png)
+
 On this page, you will see a list of your bookmarks.
 
 To ***delete a bookmark***, click the **Remove Bookmark** button below that bookmark's title.
