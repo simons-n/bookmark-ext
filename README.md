@@ -1,7 +1,8 @@
 # Book Mk. 2
+
 ![](img/bkmk128.png)
 
-Book Mk. 2 is a simple extention meant to provide an alternative way to view and interact with your Chrome bookmarks (while also providing me with some web development practice!)  Look out for upcoming features, including bookmark reminders.
+**Book Mk. 2** is a simple extension meant to provide an alternative way to view and interact with your Chrome bookmarks (while also providing me with some web development practice!)  Look out for upcoming features, including bookmark reminders.
 
 ### Tech
 
@@ -9,7 +10,7 @@ Book Mk. 2 utilizes some helpful technologies:
 
 * [Google Firebase](https://firebase.google.com/) - Really nifty cloud-based backend
 * [Chrome Extension APIs](https://developer.chrome.com/extensions/api_index) - chrome.bookmarks, chrome.storage, and others help with accessing, manipulating, and storing a user's bookmarks
-* [jQuery] - will be useful for event handling, setting reminders
+* [jQuery](https://jquery.com/) - will be useful for event handling, setting reminders
 
 ### Installation
 Book Mk. 2 isn't available on the Chrome Web Store yet, but you can still install and run it!
@@ -43,9 +44,7 @@ Click **View Bookmarks** to open a new tab that lists all of your bookmarks.
 
 ![](figures/bkmklist.png)
 
-On this page, you will see a list of your bookmarks.
-
-To ***delete a bookmark***, click the **Remove Bookmark** button below that bookmark's title.
+On this page, you will see a list of your bookmarks.  To ***delete a bookmark***, click the **Remove Bookmark** button below that bookmark's title.
 
 ***NOTE:*** the **Edit Reminder** button currently has no functionality.
 
